@@ -122,7 +122,7 @@
   var variedade = [
     ['pao-redondo',    'Pães',         'a partir de R$ 24', '#c-paes',       'Pães redondos de fermentação natural numa gamela de madeira'],
     ['torta',          'Tortas',       'a partir de R$ 42', '#c-tortas',     'Torta cremosa dourada servida com salada'],
-    ['homus',          'Pastinhas',    'a partir de R$ 20', '#c-pastinhas',  'Coalhada seca e homus servidos com pão'],
+    ['homus',          'Pastinhas',    'a partir de R$ 20', '#c-pastinhas',  'Coalhada seca sendo passada numa fatia de pão'],
     ['cheesecake',     'Cheesecake',   'R$ 39',             '#c-cheesecake', 'Cheesecake coberto com geleia da casa'],
     ['papo-de-anjo',   'Papo de anjo', 'R$ 38',             '#c-papodeanjo', 'Papo de anjo em calda, em potes de vidro'],
     ['geleias',        'Geleias',      'R$ 28',             '#c-geleias',    'Potes de geleia caseira com uma tigelinha servida'],
