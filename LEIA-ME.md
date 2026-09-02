@@ -32,7 +32,7 @@ Se o build reclamar `Project framework is set to "services", but no services are
 
 **As fotos que giram na capa** — são as `<img class="disc__foto">` dentro de `<div class="disc" id="heroDisc">`, no começo do `index.html`. Pode acrescentar ou tirar fotos à vontade: a primeira precisa ter a classe `is-on`, e o rodízio se ajusta sozinho.
 
-**Fotos** — todas ficam em `assets/img`. Para trocar uma, basta salvar a foto nova por cima, com o mesmo nome de arquivo. As fotos do cardápio são quadradas (920 × 920 pixels) porque aparecem cortadas em círculo; as que ocupam o fundo são horizontais (1800 × 1100).
+**Fotos** — todas ficam em `assets/img`. Para trocar uma, basta salvar a foto nova por cima, com o mesmo nome de arquivo. Depois de publicar, dê um refresh forçado (Ctrl+Shift+R no Windows, Cmd+Shift+R no Mac) para ver a troca: o navegador guarda as imagens que já baixou e, sem isso, continua mostrando a antiga por um tempo. As fotos do cardápio são quadradas (920 × 920 pixels) porque aparecem cortadas em círculo; as que ocupam o fundo são horizontais (1800 × 1100).
 
 ## Animações e rolagem suave
 
