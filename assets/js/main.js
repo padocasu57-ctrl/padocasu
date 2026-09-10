@@ -127,7 +127,7 @@
     ['papo-de-anjo',   'Papo de anjo', 'R$ 38',             '#c-papodeanjo', 'Papo de anjo em calda, em potes de vidro'],
     ['geleias',        'Geleias',      'R$ 28',             '#c-geleias',    'Potes de geleia caseira com uma tigelinha servida'],
     ['granola',        'Granola',      'R$ 28',             '#c-granola',    'Granola rica com castanhas e sementes'],
-    ['bolo',           'Bolo',         'sob consulta',      '#c-bolo',       'Bolo com frutas cristalizadas e castanhas']
+    ['bolo',           'Bolos',        'sob consulta',      '#c-bolo',       'Bolo com frutas cristalizadas e castanhas']
   ];
   var listaVar = document.getElementById('variedadeLista');
   if (listaVar) {
@@ -140,15 +140,63 @@
     }).join('');
   }
 
-  /* ---------- rodízio de fotos da capa ---------- */
+  /* ---------- rodízio de fotos da capa ----------
+     Passa sozinho a cada 4,2s, mas também dá para tocar na foto
+     ou nas bolinhas para adiantar. Ao tocar, o relógio reinicia,
+     senão a foto escolhida trocaria logo em seguida. */
+  var TEMPO_FOTO = 4200;
   var fotosCapa = document.querySelectorAll('#heroDisc .disc__foto');
-  if (fotosCapa.length > 1 && !reduce) {
+  var dots = document.getElementById('heroDots');
+  var avanca = document.getElementById('heroAvanca');
+
+  if (fotosCapa.length > 1) {
     var atual = 0;
-    setInterval(function () {
+    var relogio = null;
+
+    if (dots) {
+      dots.innerHTML = Array.prototype.map.call(fotosCapa, function (f, i) {
+        var nome = (f.getAttribute('alt') || 'Foto ' + (i + 1)).split(',')[0];
+        return '<button type="button" role="tab" aria-selected="' + (i === 0) +
+               '" aria-label="' + nome + '"></button>';
+      }).join('');
+      Array.prototype.forEach.call(dots.children, function (bt, i) {
+        bt.addEventListener('click', function () { mostrar(i); bt.blur(); });
+      });
+    }
+
+    function mostrar(i) {
+      fotosCapa[atual].classList.remove('is-on');
+      atual = (i + fotosCapa.length) % fotosCapa.length;
+      fotosCapa[atual].classList.add('is-on');
+      if (dots) {
+        Array.prototype.forEach.call(dots.children, function (bt, k) {
+          bt.setAttribute('aria-selected', k === atual ? 'true' : 'false');
+        });
+      }
+      reiniciar();
+    }
+
+    function reiniciar() {
+      if (relogio) clearInterval(relogio);
+      if (reduce) return;                 // sem troca automática se o sistema pede menos movimento
+      relogio = setInterval(function () { proxima(); }, TEMPO_FOTO);
+    }
+
+    function proxima() {
       fotosCapa[atual].classList.remove('is-on');
       atual = (atual + 1) % fotosCapa.length;
       fotosCapa[atual].classList.add('is-on');
-    }, 4200);
+      if (dots) {
+        Array.prototype.forEach.call(dots.children, function (bt, k) {
+          bt.setAttribute('aria-selected', k === atual ? 'true' : 'false');
+        });
+      }
+    }
+
+    if (avanca) avanca.addEventListener('click', function () { mostrar(atual + 1); avanca.blur(); });
+    reiniciar();
+  } else if (dots) {
+    dots.remove();
   }
 
   /* ---------- galeria circular (ambiente da casa) ---------- */
@@ -201,6 +249,7 @@
 
   function onScroll() {
     var y = window.pageYOffset;
+    nav.classList.toggle('is-solid', y > 12);
     nav.classList.toggle('is-stuck', y > window.innerHeight * 0.82);
     if (fab) fab.classList.toggle('is-in', y > window.innerHeight * 0.6);
 

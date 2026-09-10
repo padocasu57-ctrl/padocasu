@@ -120,6 +120,8 @@ em,.it{font-style:italic}
   padding:18px var(--pad);color:var(--white);
   transition:background .5s var(--ease),padding .5s var(--ease),color .5s var(--ease),box-shadow .5s var(--ease);
 }
+.nav.is-solid{background:var(--terra)}   /* fundo já na primeira rolagem: sobre a capa é a mesma cor,
+                                            mas impede o conteúdo de passar por baixo e colidir com o logo */
 .nav.is-stuck{background:var(--terra);padding-block:11px;box-shadow:0 10px 40px rgba(142,48,9,.22)}
 .nav__mark{position:relative;z-index:2;display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.02rem;letter-spacing:.2em;text-transform:uppercase}
 .nav__mark .sparkle{width:.85em;height:.85em}
@@ -168,16 +170,27 @@ em,.it{font-style:italic}
 /* rodízio de fotos da capa — mostra que não é só pão */
 .disc__foto{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease)}
 .disc__foto.is-on{opacity:1}
+/* a foto toda avança o rodízio; o botão fica por cima, invisível */
+.disc__avanca{
+  position:absolute;inset:0;z-index:2;border:0;padding:0;margin:0;
+  background:transparent;border-radius:50%;cursor:pointer;-webkit-tap-highlight-color:transparent;
+}
+.hero__dots{
+  display:flex;justify-content:center;gap:9px;
+  margin-top:clamp(18px,2.4vw,26px);position:relative;z-index:3;
+}
+.hero__dots button{
+  width:9px;height:9px;padding:0;border-radius:50%;cursor:pointer;
+  border:1px solid var(--white-55);background:transparent;
+  transition:background .35s var(--ease),border-color .35s var(--ease),transform .35s var(--ease);
+}
+.hero__dots button:hover{border-color:var(--white)}
+.hero__dots button[aria-selected="true"]{background:var(--white);border-color:var(--white);transform:scale(1.15)}
 .hero__ring{
   position:absolute;inset:-8%;border:1px solid var(--white-25);border-radius:50%;
   animation:spin 46s linear infinite;
 }
-.hero__ring::after{
-  content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;margin-left:-5px;
-  background:var(--white);border-radius:50%;
-}
 .hero__ring--2{inset:-17%;border-style:dashed;border-color:var(--white-14);animation-duration:80s;animation-direction:reverse}
-.hero__ring--2::after{display:none}
 @keyframes spin{to{transform:rotate(360deg)}}
 
 .hero__peony{right:-7%;bottom:-34%;width:min(430px,38vw);opacity:.13}
@@ -416,8 +429,11 @@ em,.it{font-style:italic}
   .hero{padding:100px 0 90px;min-height:0}
   .hero__logo{width:min(300px,62%)}
   .hero__media{margin-top:6px}
-  .disc{width:min(300px,64vw)}
+  .hero__discwrap{width:min(300px,64vw)}   /* é o contêiner que manda no tamanho, não o círculo interno */
   .hero__ring--2{inset:-13%}
+  .hero__spark{display:none}   /* na coluna estreita as faíscas caíam em cima do texto */
+  .scroller{display:none}      /* no celular a capa já transborda a tela: a dica de rolagem sobra
+                                  e ainda batia nas bolinhas do carrossel */
   .cat:nth-of-type(even) .cat__media{order:0}
   .story__media{margin-top:18px}
 }

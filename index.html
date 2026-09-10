@@ -84,7 +84,7 @@
     <div class="hero__copy">
       <h1 class="sr">Padócasu — cozinha da Su e do Carlos</h1>
       <img class="hero__logo rv is-in" src="assets/img/logo-padocasu.svg" alt="Padócasu" width="430" height="472" fetchpriority="high">
-      <p class="hero__tag rv rv-d1">Cozinha da Su e do Carlos. Receitas de família, ingredientes naturais, cuidado e muito amor — para trazer à mesa aquele sabor simples, gostoso e acolhedor.</p>
+      <p class="hero__tag rv rv-d1">Cozinha da Su e do Carlos. Receitas de família, ingredientes naturais, cuidado e muito amor, para trazer à mesa aquele sabor simples, gostoso e acolhedor.</p>
       <div class="hero__cta rv rv-d2">
         <a class="btn btn--ghost-w" href="https://wa.me/5511992169708?text=Oi%2C%20Su%21%20Tudo%20bem%3F%20Vim%20pelo%20site%20da%20Pad%C3%B3casu%20e%20queria%20saber%20mais%20sobre%20os%20produtos.%20Como%20funciona%20pra%20encomendar%3F" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"></use></svg> Pedir pelo WhatsApp
@@ -108,13 +108,15 @@
           <img class="disc__foto" src="assets/img/homus.jpg" alt="Coalhada seca sendo passada numa fatia de pão" width="920" height="920">
           <img class="disc__foto" src="assets/img/geleias.jpg" alt="Potes de geleia caseira contra a luz do sol" width="920" height="920">
         </div>
+        <button class="disc__avanca" id="heroAvanca" type="button" aria-label="Ver a próxima foto"></button>
         <span class="hero__ring" aria-hidden="true"></span>
         <span class="hero__ring hero__ring--2" aria-hidden="true"></span>
       </div>
+      <div class="hero__dots" id="heroDots" role="tablist" aria-label="Fotos da Padócasu"></div>
     </div>
   </div>
 
-  <a class="scroller" href="#variedade" aria-label="Rolar para a próxima seção">role<i></i></a>
+  <a class="scroller" href="#variedade" aria-label="Ver o que sai da nossa cozinha">veja mais<i></i></a>
 </section>
 
 <!-- ============ VARIEDADE (logo abaixo da capa) ============ -->
@@ -141,7 +143,7 @@
       <p class="eyebrow rv">A cozinha</p>
       <h2 class="h-lg rv rv-d1" style="margin:20px 0 28px">Da nossa casa<br><em>para a sua mesa</em></h2>
       <div class="rv rv-d2">
-        <p>A Padócasu nasceu do jeito mais simples que existe: duas pessoas cozinhando em casa para quem elas gostam. A Su e o Carlos amassam, esperam, assam e embalam cada coisa com a mesma paciência de quem cozinha para a própria família — porque é exatamente isso que eles fazem.</p>
+        <p>A Padócasu nasceu do jeito mais simples que existe: duas pessoas cozinhando em casa para quem elas gostam. A Su e o Carlos amassam, esperam, assam e embalam cada coisa com a mesma paciência de quem cozinha para a própria família, porque é exatamente isso que eles fazem.</p>
         <p>Aqui não tem pressa nem atalho. O levain é alimentado todo dia, o pão descansa o tempo que precisa descansar, a geleia é feita com a fruta da estação e a pastinha leva o tempero que a receita de família pede. Nada de conservante, nada de pó, nada de fórmula pronta.</p>
         <p>O resultado é aquele sabor que a gente reconhece de olho fechado: <em>simples, gostoso e acolhedor</em>.</p>
         <p class="story__sign">Su &amp; Carlos <span class="sparkle twinkle"><svg><use href="#i-sparkle"></use></svg></span></p>
@@ -170,7 +172,7 @@
     <div>
       <p class="eyebrow rv">Fermentação natural</p>
       <h2 class="h-lg rv rv-d1" style="margin:20px 0 26px">O tempo é o nosso<br><em>ingrediente principal</em></h2>
-      <p class="lead rv rv-d2" style="opacity:.95;max-width:44ch">O pão de fermentação natural — o levain — traz benefícios reais à saúde justamente por causa do processo lento. Farinha, água, sal e tempo: só isso.</p>
+      <p class="lead rv rv-d2" style="opacity:.95;max-width:44ch">O pão de fermentação natural, o levain, traz benefícios reais à saúde justamente por causa do processo lento. Farinha, água, sal e tempo: só isso.</p>
       <p class="rv rv-d3" style="opacity:.85;max-width:44ch">Do levain à fornada, o pão leva o tempo que precisar. É o que dá a casca crocante, o miolo úmido e aquele leve azedinho que só a fermentação de verdade entrega.</p>
     </div>
     <div class="benefits rv rv-d2">
@@ -204,7 +206,7 @@
     <div class="sec__head rv">
       <p class="eyebrow">Cardápio</p>
       <h2 class="h-lg" style="margin:20px 0 22px">Tudo feito<br><em>à mão, em casa</em></h2>
-      <p class="lead" style="opacity:.88;max-width:52ch">Preços por peça. Pães e tortas saem sob encomenda — chame no WhatsApp com antecedência para garantir a sua.</p>
+      <p class="lead" style="opacity:.88;max-width:52ch">Preços por peça. Pães e tortas saem sob encomenda. Chame no WhatsApp com antecedência para garantir a sua.</p>
     </div>
 
     <nav class="menu__nav rv rv-d1" aria-label="Categorias do cardápio">
@@ -215,7 +217,7 @@
       <a class="chip" href="#c-papodeanjo">Papo de anjo</a>
       <a class="chip" href="#c-geleias">Geleias</a>
       <a class="chip" href="#c-granola">Granola</a>
-      <a class="chip" href="#c-bolo">Bolo</a>
+      <a class="chip" href="#c-bolo">Bolos</a>
     </nav>
 
     <!-- pães -->
@@ -356,7 +358,7 @@
         </div>
       </div>
       <div class="cat__body">
-        <h3 class="cat__title">Bolo <span class="sparkle twinkle"><svg><use href="#i-sparkle"></use></svg></span></h3>
+        <h3 class="cat__title">Bolos <span class="sparkle twinkle"><svg><use href="#i-sparkle"></use></svg></span></h3>
         <p class="cat__note">Aquele de dia de festa</p>
         <ul class="items">
           <li class="item"><span class="item__name"><b>Frutas cristalizadas e castanhas</b><small>Bolo inteiro</small></span><i class="item__dots"></i><span class="item__price item__price--consulta">sob consulta</span><a class="item__wa" data-item="Bolo de frutas cristalizadas e castanhas" href="#" aria-label="Pedir bolo pelo WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-wa"></use></svg></a></li>
@@ -366,7 +368,7 @@
 
     <p class="menu__obs rv">
       <span class="sparkle twinkle"><svg><use href="#i-sparkle"></use></svg></span>
-      Entre outros sabores, valores e peso, sob consulta — é só chamar no WhatsApp que a gente combina.
+      Entre outros sabores, valores e peso, sob consulta. É só chamar no WhatsApp que a gente combina.
     </p>
   </div>
 </section>
@@ -391,9 +393,9 @@
       <div class="card rv rv-d1">
         <span class="card__label">Padócasu · Lapa</span>
         <h3>Rua Coronel Botelho, 91</h3>
-        <p>Lapa · São Paulo — SP<br>CEP 05088-020</p>
+        <p>Lapa · São Paulo, SP<br>CEP 05088-020</p>
         <p style="margin-top:14px">Atendemos a Lapa e a Vila Leopoldina.</p>
-        <p style="margin-top:20px">Você pode retirar o pedido com a gente aqui ou a gente faz a entrega. <strong style="font-weight:600">O frete é à parte</strong> — a Su calcula conforme o seu endereço e te passa o valor antes de fechar.</p>
+        <p style="margin-top:20px">Você pode retirar o pedido com a gente aqui ou a gente faz a entrega. <strong style="font-weight:600">O frete é à parte</strong>. A Su calcula conforme o seu endereço e te passa o valor antes de fechar.</p>
         <p>Dia e horário a gente combina direto no WhatsApp.</p>
         <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px">
           <a class="btn btn--ghost-w" href="https://www.google.com/maps/search/?api=1&query=Rua+Coronel+Botelho,+91+-+Lapa,+S%C3%A3o+Paulo+-+SP,+05088-020" target="_blank" rel="noopener">
@@ -408,7 +410,7 @@
       <ol class="steps rv rv-d2">
         <li>
           <div><h4>Escolha no cardápio</h4>
-          <p>Dá uma olhada no que tem e anote o que quiser — pode misturar pão, torta, pastinha, cheesecake, geleia e doce no mesmo pedido.</p></div>
+          <p>Dá uma olhada no que tem e anote o que quiser. Pode misturar pão, torta, pastinha, cheesecake, geleia e doce no mesmo pedido.</p></div>
         </li>
         <li>
           <div><h4>Peça com antecedência</h4>
@@ -416,7 +418,7 @@
         </li>
         <li>
           <div><h4>Retire com a gente ou receba em casa</h4>
-          <p>Você busca aqui na Lapa ou a gente entrega. O frete é cobrado à parte e calculado conforme o seu endereço — a gente te passa o valor antes de fechar o pedido.</p></div>
+          <p>Você busca aqui na Lapa ou a gente entrega. O frete é cobrado à parte e calculado conforme o seu endereço, e a gente te passa o valor antes de fechar o pedido.</p></div>
         </li>
       </ol>
     </div>
@@ -430,7 +432,7 @@
     <div class="foot__cta rv">
       <p class="eyebrow" style="justify-content:center">Bora combinar?</p>
       <h2 class="h-lg" style="margin:22px 0 20px">Chama a gente<br><em>no WhatsApp</em></h2>
-      <p style="opacity:.9">É a Su e o Carlos do outro lado — sem robô, sem formulário. Conta o que você quer e a gente organiza a fornada.</p>
+      <p style="opacity:.9">É a Su e o Carlos do outro lado, sem robô, sem formulário. Conta o que você quer e a gente organiza a fornada.</p>
       <a class="btn btn--solid" href="https://wa.me/5511992169708?text=Oi%2C%20Su%21%20Tudo%20bem%3F%20Vim%20pelo%20site%20da%20Pad%C3%B3casu%20e%20queria%20saber%20mais%20sobre%20os%20produtos.%20Como%20funciona%20pra%20encomendar%3F" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"></use></svg> 11 99216-9708
       </a>
